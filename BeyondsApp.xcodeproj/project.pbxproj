@@ -14,6 +14,8 @@
 		D51AC8722B8A496800F6D3FB /* CollageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8712B8A496800F6D3FB /* CollageSection.swift */; };
 		D51AC8752B8A4FAB00F6D3FB /* CustomClipShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8742B8A4FAB00F6D3FB /* CustomClipShape.swift */; };
 		D51AC8772B8A4FCE00F6D3FB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8762B8A4FCE00F6D3FB /* ImagePicker.swift */; };
+		D51AC8792B8A6AD000F6D3FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8782B8A6AD000F6D3FB /* Constants.swift */; };
+		D51AC87C2B8A725D00F6D3FB /* ImagePickerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */; };
 		D594B1632B88D64900C11067 /* BeyondsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594B1622B88D64900C11067 /* BeyondsAppApp.swift */; };
 		D594B1652B88D64900C11067 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594B1642B88D64900C11067 /* ContentView.swift */; };
 		D594B1672B88D64C00C11067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D594B1662B88D64C00C11067 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		D51AC8712B8A496800F6D3FB /* CollageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageSection.swift; sourceTree = "<group>"; };
 		D51AC8742B8A4FAB00F6D3FB /* CustomClipShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClipShape.swift; sourceTree = "<group>"; };
 		D51AC8762B8A4FCE00F6D3FB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D51AC8782B8A6AD000F6D3FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVM.swift; sourceTree = "<group>"; };
 		D594B15F2B88D64900C11067 /* BeyondsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D594B1622B88D64900C11067 /* BeyondsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondsAppApp.swift; sourceTree = "<group>"; };
 		D594B1642B88D64900C11067 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,8 +79,10 @@
 		D51AC86A2B8A48F700F6D3FB /* Collage */ = {
 			isa = PBXGroup;
 			children = (
+				D51AC87A2B8A724D00F6D3FB /* ViewModel */,
 				D51AC8702B8A495800F6D3FB /* Utilities */,
 				D51AC86D2B8A491C00F6D3FB /* Views */,
+				D51AC8782B8A6AD000F6D3FB /* Constants.swift */,
 			);
 			path = Collage;
 			sourceTree = "<group>";
@@ -97,6 +103,14 @@
 				D51AC8762B8A4FCE00F6D3FB /* ImagePicker.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D51AC87A2B8A724D00F6D3FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D594B1562B88D64900C11067 = {
@@ -226,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D594B1652B88D64900C11067 /* ContentView.swift in Sources */,
+				D51AC8792B8A6AD000F6D3FB /* Constants.swift in Sources */,
 				D51AC8752B8A4FAB00F6D3FB /* CustomClipShape.swift in Sources */,
 				D51AC8662B8A45FE00F6D3FB /* PresetsModel.swift in Sources */,
 				D51AC8692B8A463200F6D3FB /* ViewExtension.swift in Sources */,
@@ -234,6 +249,7 @@
 				D51AC86F2B8A494000F6D3FB /* ImagePickerView.swift in Sources */,
 				D51AC8772B8A4FCE00F6D3FB /* ImagePicker.swift in Sources */,
 				D594B1632B88D64900C11067 /* BeyondsAppApp.swift in Sources */,
+				D51AC87C2B8A725D00F6D3FB /* ImagePickerVM.swift in Sources */,
 				D594B17C2B89D9C400C11067 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

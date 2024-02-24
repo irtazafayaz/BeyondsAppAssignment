@@ -18,13 +18,11 @@ struct CustomClipShape: Shape {
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
-
-        path.move(to: .zero)
-        path.addLine(to: CGPoint(x: rect.midX, y: rect.midY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: direction == .left ? rect.minX : rect.maxX, y: direction == .left ? rect.maxY : rect.minY))
+        path.move(to: CGPoint(x: Constants.boxWidth * 0.70, y: rect.minY))
+        path.addLine(to: CGPoint(x: Constants.boxWidth * 0.50, y: rect.maxY))
+        path.addLine(to: CGPoint(x: direction == .left ? rect.minX : rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: direction == .left ? rect.minX : rect.maxX, y: rect.minY))
         path.closeSubpath()
-
         return path
     }
 }

@@ -11,9 +11,9 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePicker: UIViewControllerRepresentable {
+    
     @Environment(\.presentationMode) var presentationMode
     @Binding var image: UIImage?
-    @Binding var selection: ActiveSelection?
     
     func makeUIViewController(context: Context) -> some UIViewController {
         var config = PHPickerConfiguration()
@@ -44,12 +44,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             result.itemProvider.loadObject(ofClass: UIImage.self) { (object, error) in
                 if let image = object as? UIImage {
                     DispatchQueue.main.async {
-                        if self.parent.selection == .left {
-                            self.parent.image = image
-                        } else if self.parent.selection == .right {
-                            self.parent.image = image
-                        }
-                        self.parent.selection = nil
+                        self.parent.image = image
                     }
                 }
             }

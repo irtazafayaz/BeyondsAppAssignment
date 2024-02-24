@@ -9,67 +9,64 @@ import SwiftUI
 
 struct ImagePickerView: View {
     
-    @State private var leftImage: UIImage?
-    @State private var rightImage: UIImage? = UIImage(named: "boy")
-    @State private var showingImagePicker = false
-    @State private var activeSelection: ActiveSelection?
+    @ObservedObject var viewModel = ImagePickerVM()
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 
                 Path { path in
-                    path.move(to: CGPoint(x: 0, y: 0))
-                    path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.height))
+                    path.move(to: CGPoint(x: Constants.boxWidth * 0.70 , y: 0))
+                    path.addLine(to: CGPoint(x: Constants.boxWidth * 0.50, y: geometry.size.height))
+                    
                 }
                 .stroke(style: StrokeStyle(lineWidth: 2, dash: [1]))
                 .foregroundColor(.black)
                 
-                // MARK: Left Image
-                
-                if let leftImage = leftImage {
+                if let leftImage = viewModel.leftImage {
                     Image(uiImage: leftImage)
                         .scaledToFit()
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .clipShape(CustomClipShape(direction: .left))
-                    
-                    
                 }
                 
-                // MARK: Right Image
-                if let rightImage = rightImage {
+                if let rightImage = viewModel.rightImage {
                     Image(uiImage: rightImage)
                         .scaledToFit()
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .clipShape(CustomClipShape(direction: .right))
                 }
                 
-                
-                // Tap gestures for each half
-                
                 Color.clear
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        self.activeSelection = .left
-                        self.showingImagePicker = true
+                        self.viewModel.activeSelection = .left
+                        self.viewModel.showingImagePicker = true
                     }
                     .frame(width: geometry.size.width / 2, height: geometry.size.height)
                 
                 Color.clear
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        self.activeSelection = .right
-                        self.showingImagePicker = true
+                        self.viewModel.activeSelection = .right
+                        self.viewModel.showingImagePicker = true
                     }
                     .frame(width: geometry.size.width / 2, height: geometry.size.height)
                     .offset(x: geometry.size.width / 2)
             }
             .border(Color.black, width: 2)
         }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: self.$leftImage, selection: $activeSelection)
+        .sheet(isPresented: $viewModel.showingImagePicker) {
+            if let activeSelection = viewModel.activeSelection {
+                switch activeSelection {
+                case .left:
+                    ImagePicker(image: self.$viewModel.leftImage)
+                case .right:
+                    ImagePicker(image: self.$viewModel.rightImage)
+                }
+            }
         }
-        .frame(width: 300, height: 500)
+        .frame(width: Constants.boxWidth, height: Constants.boxHeight)
     }
 }
 
