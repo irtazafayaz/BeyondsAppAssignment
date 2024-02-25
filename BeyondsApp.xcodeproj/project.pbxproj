@@ -16,6 +16,8 @@
 		D51AC8772B8A4FCE00F6D3FB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8762B8A4FCE00F6D3FB /* ImagePicker.swift */; };
 		D51AC8792B8A6AD000F6D3FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8782B8A6AD000F6D3FB /* Constants.swift */; };
 		D51AC87C2B8A725D00F6D3FB /* ImagePickerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */; };
+		D51AC87F2B8A8EA900F6D3FB /* ImageEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC87E2B8A8EA900F6D3FB /* ImageEditingView.swift */; };
+		D51AC8812B8BEB9A00F6D3FB /* ImageEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8802B8BEB9A00F6D3FB /* ImageEditingViewModel.swift */; };
 		D594B1632B88D64900C11067 /* BeyondsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594B1622B88D64900C11067 /* BeyondsAppApp.swift */; };
 		D594B1652B88D64900C11067 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594B1642B88D64900C11067 /* ContentView.swift */; };
 		D594B1672B88D64C00C11067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D594B1662B88D64C00C11067 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		D51AC8762B8A4FCE00F6D3FB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D51AC8782B8A6AD000F6D3FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVM.swift; sourceTree = "<group>"; };
+		D51AC87E2B8A8EA900F6D3FB /* ImageEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditingView.swift; sourceTree = "<group>"; };
+		D51AC8802B8BEB9A00F6D3FB /* ImageEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditingViewModel.swift; sourceTree = "<group>"; };
 		D594B15F2B88D64900C11067 /* BeyondsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D594B1622B88D64900C11067 /* BeyondsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondsAppApp.swift; sourceTree = "<group>"; };
 		D594B1642B88D64900C11067 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D51AC87D2B8A8E8B00F6D3FB /* WhatsappEditing */ = {
+			isa = PBXGroup;
+			children = (
+				D51AC87E2B8A8EA900F6D3FB /* ImageEditingView.swift */,
+				D51AC8802B8BEB9A00F6D3FB /* ImageEditingViewModel.swift */,
+			);
+			path = WhatsappEditing;
+			sourceTree = "<group>";
+		};
 		D594B1562B88D64900C11067 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 		D594B1612B88D64900C11067 /* BeyondsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D51AC87D2B8A8E8B00F6D3FB /* WhatsappEditing */,
 				D51AC86A2B8A48F700F6D3FB /* Collage */,
 				D594B1782B88D9DA00C11067 /* Shaders */,
 				D594B1622B88D64900C11067 /* BeyondsAppApp.swift */,
@@ -246,11 +260,13 @@
 				D51AC8692B8A463200F6D3FB /* ViewExtension.swift in Sources */,
 				D51AC8722B8A496800F6D3FB /* CollageSection.swift in Sources */,
 				D51AC8602B8A43AA00F6D3FB /* PresetsView.swift in Sources */,
+				D51AC8812B8BEB9A00F6D3FB /* ImageEditingViewModel.swift in Sources */,
 				D51AC86F2B8A494000F6D3FB /* ImagePickerView.swift in Sources */,
 				D51AC8772B8A4FCE00F6D3FB /* ImagePicker.swift in Sources */,
 				D594B1632B88D64900C11067 /* BeyondsAppApp.swift in Sources */,
 				D51AC87C2B8A725D00F6D3FB /* ImagePickerVM.swift in Sources */,
 				D594B17C2B89D9C400C11067 /* Shaders.metal in Sources */,
+				D51AC87F2B8A8EA900F6D3FB /* ImageEditingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

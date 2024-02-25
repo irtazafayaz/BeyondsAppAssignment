@@ -10,8 +10,16 @@ import SwiftUI
 struct ContentView: View {
 
     var body: some View {
-        VStack {
-            ImagePickerView()
+        NavigationStack {
+            NavigationLink("Image Filters") {
+                PresetsView()
+            }
+            NavigationLink("Collage") {
+                ImagePickerView()
+            }
+            NavigationLink("Whatsapp Status Screen") {
+                ImageEditingView()
+            }
         }
     }
 }
