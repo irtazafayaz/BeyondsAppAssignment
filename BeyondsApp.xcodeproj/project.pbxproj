@@ -403,6 +403,9 @@
 				DEVELOPMENT_TEAM = N3UZ6NV4QG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "App wants to access Photo library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "App wants to access camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App wants to access album";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +435,9 @@
 				DEVELOPMENT_TEAM = N3UZ6NV4QG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "App wants to access Photo library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "App wants to access camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App wants to access album";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

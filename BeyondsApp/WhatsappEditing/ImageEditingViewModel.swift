@@ -12,7 +12,7 @@ class ImageEditingViewModel: ObservableObject {
     
     @Published var showingImagePicker = false
     @Published var editedImage: UIImage?
-    @Published var textToAdd = "Your text here"
+    @Published var textToAdd = ""
     @Published var textColor = Color.yellow
     @Published var showingColorPicker = false
     

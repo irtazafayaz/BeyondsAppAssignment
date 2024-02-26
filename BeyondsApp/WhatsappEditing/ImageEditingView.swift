@@ -19,8 +19,9 @@ struct ImageEditingView: View {
                     .scaledToFit()
                     .frame(width: viewModel.imageSize.width, height: viewModel.imageSize.height)
                     .overlay(
-                        Text("Drag me!")
+                        TextField("Enter Text", text: $viewModel.textToAdd)
                             .font(.headline)
+                            .foregroundColor(viewModel.textColor)
                             .padding()
                             .background(Color.white.opacity(0.5))
                             .cornerRadius(10)
@@ -70,18 +71,8 @@ struct ImageEditingView: View {
                 .sheet(isPresented: $viewModel.showingColorPicker) {
                     ColorPicker("Pick a color", selection: $viewModel.textColor)
                 }
-                
-                Button("Save Image") {
-                    saveImage()
-                }
-                .padding()
             }
         }
-    }
-    
-    func saveImage() {
-        guard let editedImage = viewModel.editedImage else { return }
-        UIImageWriteToSavedPhotosAlbum(viewModel.editedImage!, nil, nil, nil)
     }
     
 }
