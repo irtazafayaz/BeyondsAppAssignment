@@ -11,17 +11,13 @@ import SwiftUI
 class ImageEditingViewModel: ObservableObject {
     
     @Published var showingImagePicker = false
-    @Published var editedImage: UIImage?
+    @Published var editedImage: UIImage? = UIImage(named: "boy")
     @Published var textToAdd = ""
     @Published var textColor = Color.yellow
     @Published var showingColorPicker = false
-    
+    @Published var showTextField = false
+
     @Published var offset = CGSize.zero
     @Published var currentOffset = CGSize.zero
-    
-    let textWidth: CGFloat = 100
-    let textHeight: CGFloat = 50
-    let imageSize = CGSize(width: 300, height: 500)
-    
     
 }
