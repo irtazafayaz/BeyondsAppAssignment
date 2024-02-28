@@ -22,7 +22,8 @@ struct MoveableTextAndImage: View {
                 }
                 
                 TextField("", text: $viewModel.textToAdd)
-                    .frame(width: 200, height: 50)
+                    .frame(width: 100, height: 50)
+                    .foregroundColor(viewModel.textColor)
                     .background(Color.white.opacity(0.5))
                     .cornerRadius(5)
                     .padding(4)
@@ -30,16 +31,7 @@ struct MoveableTextAndImage: View {
                     .gesture(
                         DragGesture()
                             .onChanged { value in
-                                let newLocation = value.location
-                                let minX = geometry.size.width * TextfieldBounds.min.rawValue
-                                let maxX = geometry.size.width * TextfieldBounds.max.rawValue
-                                let minY = geometry.size.height * TextfieldBounds.min.rawValue
-                                let maxY = geometry.size.height * TextfieldBounds.max.rawValue
-                                
-                                let boundedX = min(max(newLocation.x, minX), maxX)
-                                let boundedY = min(max(newLocation.y, minY), maxY)
-                                
-                                self.viewModel.textFieldPosition = CGPoint(x: boundedX, y: boundedY)
+                                self.viewModel.updateTextFieldPosition(dragValue: value, parentSize: geometry.size)
                             }
                     )
             }

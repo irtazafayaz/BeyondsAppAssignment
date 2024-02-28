@@ -14,12 +14,17 @@ struct ImageEditingView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
                 MoveableTextAndImage(viewModel: viewModel)
-                    .navigationBarItems(trailing: Button("Save to Gallery") {
-                        viewModel.captureView {
-                            UIImageWriteToSavedPhotosAlbum($0, nil, nil, nil)
-                        }
-                    })
+                
+                ColorPicker("Change text color", selection: $viewModel.textColor)
+                    .padding()
+                
+                Button("Save to gallery") {
+                    viewModel.captureView {
+                        UIImageWriteToSavedPhotosAlbum($0, nil, nil, nil)
+                    }
+                }
             }
         }
     }
