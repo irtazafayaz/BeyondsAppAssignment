@@ -14,7 +14,6 @@ class ImageEditingViewModel: ObservableObject {
     @Published var editedImage: UIImage? = UIImage(named: "boy")
     @Published var textToAdd = "Hello There"
     @Published var textColor = Color.yellow
-    @Published var showingColorPicker = false
     @Published var textFieldPosition: CGPoint = CGPoint(x: 100, y: 100)
     
     func updateTextFieldPosition(dragValue: DragGesture.Value, parentSize: CGSize) {
@@ -31,16 +30,21 @@ class ImageEditingViewModel: ObservableObject {
     }
     
     func captureView(completion: @escaping (UIImage) -> Void) {
-        let view = MoveableTextAndImage(viewModel: self)
-        let controller = UIHostingController(rootView: view)
-        UIApplication.shared.windows.first?.rootViewController?.view.addSubview(controller.view)
-        controller.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        guard let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
+        guard let window = windowScene.windows.first(where: { $0.isKeyWindow }) else { return }
+        let view = UIHostingController(rootView: MoveableTextAndImage(viewModel: self)).view
+        window.addSubview(view!)
+        view?.frame = window.frame
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let image = controller.view.asImage()
+            let renderer = UIGraphicsImageRenderer(bounds: view!.bounds)
+            let image = renderer.image { ctx in
+                view?.drawHierarchy(in: view!.bounds, afterScreenUpdates: true)
+            }
             completion(image)
-            controller.view.removeFromSuperview()
+            view?.removeFromSuperview()
         }
     }
+
     
 }
 

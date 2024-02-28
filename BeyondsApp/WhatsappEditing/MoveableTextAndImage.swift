@@ -24,7 +24,7 @@ struct MoveableTextAndImage: View {
                 TextField("", text: $viewModel.textToAdd)
                     .frame(width: 100, height: 50)
                     .foregroundColor(viewModel.textColor)
-                    .background(Color.white.opacity(0.5))
+                    .background(.black)
                     .cornerRadius(5)
                     .padding(4)
                     .position(x: viewModel.textFieldPosition.x, y: viewModel.textFieldPosition.y)
