@@ -18,6 +18,9 @@
 		D51AC87C2B8A725D00F6D3FB /* ImagePickerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */; };
 		D51AC87F2B8A8EA900F6D3FB /* ImageEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC87E2B8A8EA900F6D3FB /* ImageEditingView.swift */; };
 		D51AC8812B8BEB9A00F6D3FB /* ImageEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51AC8802B8BEB9A00F6D3FB /* ImageEditingViewModel.swift */; };
+		D575B3262B8FACB30000828A /* MoveableTextAndImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575B3252B8FACB30000828A /* MoveableTextAndImage.swift */; };
+		D575B3292B8FB6040000828A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575B3282B8FB6040000828A /* UIView+Extensions.swift */; };
+		D575B32C2B8FB6610000828A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575B32B2B8FB6610000828A /* Constants.swift */; };
 		D594B1632B88D64900C11067 /* BeyondsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594B1622B88D64900C11067 /* BeyondsAppApp.swift */; };
 		D594B1652B88D64900C11067 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D594B1642B88D64900C11067 /* ContentView.swift */; };
 		D594B1672B88D64C00C11067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D594B1662B88D64C00C11067 /* Assets.xcassets */; };
@@ -37,6 +40,9 @@
 		D51AC87B2B8A725D00F6D3FB /* ImagePickerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVM.swift; sourceTree = "<group>"; };
 		D51AC87E2B8A8EA900F6D3FB /* ImageEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditingView.swift; sourceTree = "<group>"; };
 		D51AC8802B8BEB9A00F6D3FB /* ImageEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditingViewModel.swift; sourceTree = "<group>"; };
+		D575B3252B8FACB30000828A /* MoveableTextAndImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveableTextAndImage.swift; sourceTree = "<group>"; };
+		D575B3282B8FB6040000828A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D575B32B2B8FB6610000828A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D594B15F2B88D64900C11067 /* BeyondsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D594B1622B88D64900C11067 /* BeyondsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeyondsAppApp.swift; sourceTree = "<group>"; };
 		D594B1642B88D64900C11067 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,10 +126,29 @@
 		D51AC87D2B8A8E8B00F6D3FB /* WhatsappEditing */ = {
 			isa = PBXGroup;
 			children = (
+				D575B32A2B8FB6500000828A /* Constants */,
+				D575B3272B8FB5ED0000828A /* Extensions */,
 				D51AC87E2B8A8EA900F6D3FB /* ImageEditingView.swift */,
 				D51AC8802B8BEB9A00F6D3FB /* ImageEditingViewModel.swift */,
+				D575B3252B8FACB30000828A /* MoveableTextAndImage.swift */,
 			);
 			path = WhatsappEditing;
+			sourceTree = "<group>";
+		};
+		D575B3272B8FB5ED0000828A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D575B3282B8FB6040000828A /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D575B32A2B8FB6500000828A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D575B32B2B8FB6610000828A /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		D594B1562B88D64900C11067 = {
@@ -254,10 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D594B1652B88D64900C11067 /* ContentView.swift in Sources */,
+				D575B32C2B8FB6610000828A /* Constants.swift in Sources */,
 				D51AC8792B8A6AD000F6D3FB /* Constants.swift in Sources */,
 				D51AC8752B8A4FAB00F6D3FB /* CustomClipShape.swift in Sources */,
 				D51AC8662B8A45FE00F6D3FB /* PresetsModel.swift in Sources */,
+				D575B3262B8FACB30000828A /* MoveableTextAndImage.swift in Sources */,
 				D51AC8692B8A463200F6D3FB /* ViewExtension.swift in Sources */,
+				D575B3292B8FB6040000828A /* UIView+Extensions.swift in Sources */,
 				D51AC8722B8A496800F6D3FB /* CollageSection.swift in Sources */,
 				D51AC8602B8A43AA00F6D3FB /* PresetsView.swift in Sources */,
 				D51AC8812B8BEB9A00F6D3FB /* ImageEditingViewModel.swift in Sources */,
@@ -411,6 +439,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,6 +472,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
